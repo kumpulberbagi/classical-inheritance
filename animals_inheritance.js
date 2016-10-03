@@ -1,8 +1,8 @@
 "use strict"
 class Animal {
   constructor(num_legs, is_warm_blooded) {
-    this._num_legs = num_legs;
-    this._is_warm_blooded = is_warm_blooded;
+    this._num_legs = num_legs || 4;
+    this._is_warm_blooded = is_warm_blooded || true;
   }
   set num_legs(num_legs) {
     this._num_legs = num_legs;
@@ -94,20 +94,23 @@ var binatang = new Animal();
 var mamalia = new Mammal();
 var primata = new Primate();
 var simpanse = new Chimpanzee();
+var amphibi = new Amphibian();
 var superChimpanzee = new SuperPoweredChimpanzee("Regeneration");
 
-mamalia.num_legs = 4;
-mamalia.is_warm_blooded = true;
-
 primata.num_legs = 2;
-primata.is_warm_blooded = true;
 
 superChimpanzee.num_legs = 2;
 superChimpanzee.is_warm_blooded = true;
 
+amphibi.is_warm_blooded = false;
+
 console.log("Mamals have " + mamalia.num_legs + " legs, and is a " + mamalia.is_warm_blooded + " warm bloded");
-
 console.log("Primates have " + primata.num_legs + " legs, and is a " + primata.is_warm_blooded + " warm bloded");
-
-
 console.log(superChimpanzee.use_power());
+console.log("Amphibians have " + amphibi.num_legs);
+if (amphibi.is_warm_blooded === true) {
+  console.log("Amphibi is a warm bloded animals");
+}
+else {
+  console.log("Amphibi isn't a warm bloded animals");
+}
