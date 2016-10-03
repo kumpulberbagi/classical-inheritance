@@ -1,1 +1,113 @@
 "use strict"
+class Animal {
+  constructor(num_legs, is_warm_blooded) {
+    this._num_legs = num_legs;
+    this._is_warm_blooded = is_warm_blooded;
+  }
+  set num_legs(num_legs) {
+    this._num_legs = num_legs;
+  }
+  set is_warm_blooded(is_warm_blooded) {
+    this._is_warm_blooded = is_warm_blooded;
+  }
+
+  get num_legs() {
+    return this._num_legs;
+  }
+  get is_warm_blooded() {
+    return this._is_warm_blooded;
+  }
+
+}
+
+class Mammal extends Animal {
+  constructor() {
+    super();
+  }
+}
+
+class Amphibian extends Animal {
+  constructor() {
+    super();
+  }
+}
+
+class Primate extends Mammal {
+  constructor() {
+    super();
+  }
+}
+
+class Frog extends Amphibian {
+  constructor() {
+    super();
+
+  }
+}
+
+class Bat extends Mammal{
+  constructor() {
+    super();
+
+  }
+}
+
+class Reptile extends Animal{
+  constructor() {
+    super();
+
+  }
+}
+
+class Chimpanzee extends Primate{
+  constructor() {
+    super();
+
+  }
+}
+
+class Fox extends Mammal{
+  constructor() {
+    super();
+
+  }
+}
+
+class Fish extends Animal{
+  constructor() {
+    super();
+
+  }
+}
+
+class SuperPoweredChimpanzee extends Chimpanzee {
+  constructor(super_power) {
+    super();
+    this.super_power = super_power;
+  }
+  use_power() {
+  return "The super Chimpanzee is using " + this.super_power;
+  }
+}
+
+var binatang = new Animal();
+var mamalia = new Mammal();
+var primata = new Primate();
+var simpanse = new Chimpanzee();
+var superChimpanzee = new SuperPoweredChimpanzee("Regeneration");
+
+mamalia.num_legs = 4;
+mamalia.is_warm_blooded = true;
+
+primata.num_legs = 2;
+primata.is_warm_blooded = true;
+
+superChimpanzee.num_legs = 2;
+superChimpanzee.is_warm_blooded = true;
+
+console.log("Mamals have " + mamalia.num_legs + " legs, and is a " + mamalia.is_warm_blooded + " warm bloded");
+
+console.log("Primates have " + primata.num_legs + " legs, and is a " + primata.is_warm_blooded + " warm bloded");
+
+
+console.log(superChimpanzee.use_power());
