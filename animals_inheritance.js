@@ -55,6 +55,6 @@ var simpanse = new Chimpanzee("monyet")
 console.log(simpanse.is_warm_blooded)
 
 var simpanmen = new SuperPoweredChimz("simpanmen")
-console.log(simpanmen.use_laser_vision());
-console.log(simpanmen.be_invisible());
+simpanmen.use_laser_vision();
+simpanmen.be_invisible();
 console.log(simpanmen)
