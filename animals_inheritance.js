@@ -2,6 +2,7 @@
 class Animal {
   constructor(name){
     this.name = name;
+    this.superPowered = new SuperPowered()
   }
 }
 class Chordata extends Animal{
@@ -35,26 +36,22 @@ class Chimpanzee extends Primate{
     super(name, num_legs, is_warm_blooded)
   }
 }
-class SuperPoweredChimz extends Chimpanzee{
-  constructor(name, num_legs, is_warm_blooded){
-    super(name, num_legs, is_warm_blooded)
+class SuperPowered{
+  constructor(){
     this.super = ""
   }
   use_laser_vision(){
-    this.super = this.super + " bisa menembakkan laser"
+    this.super = " bisa menembakkan laser"
     return this.super
 
   }
   be_invisible(){
-    this.super = this.super + " bisa menghilang"
+    this.super =" bisa menghilang"
     return this.super
 
   }
 }
 var simpanse = new Chimpanzee("monyet")
 console.log(simpanse.is_warm_blooded)
-
-var simpanmen = new SuperPoweredChimz("simpanmen")
-simpanmen.use_laser_vision();
-simpanmen.be_invisible();
-console.log(simpanmen)
+console.log(simpanse.superPowered.use_laser_vision())
+console.log(simpanse)
