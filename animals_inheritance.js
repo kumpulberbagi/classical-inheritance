@@ -60,9 +60,12 @@ class Reptile extends Animal{
 }
 
 class Chimpanzee extends Primate{
-  constructor() {
+  constructor(super_power) {
     super();
-
+    this.super_power = super_power;
+  }
+  use_power() {
+    return "The super Chimpanzee is using " + this.super_power;
   }
 }
 
@@ -93,20 +96,16 @@ class SuperPoweredChimpanzee extends Chimpanzee {
 var binatang = new Animal();
 var mamalia = new Mammal();
 var primata = new Primate();
-var simpanse = new Chimpanzee();
+var simpanse = new Chimpanzee("Regeneration");
 var amphibi = new Amphibian();
-var superChimpanzee = new SuperPoweredChimpanzee("Regeneration");
 
 primata.num_legs = 2;
-
-superChimpanzee.num_legs = 2;
-superChimpanzee.is_warm_blooded = true;
 
 amphibi.is_warm_blooded = false;
 
 console.log("Mamals have " + mamalia.num_legs + " legs, and is a " + mamalia.is_warm_blooded + " warm bloded");
 console.log("Primates have " + primata.num_legs + " legs, and is a " + primata.is_warm_blooded + " warm bloded");
-console.log(superChimpanzee.use_power());
+console.log("Super Power : " + simpanse.use_power());
 console.log("Amphibians have " + amphibi.num_legs);
 if (amphibi.is_warm_blooded === true) {
   console.log("Amphibi is a warm bloded animals");
